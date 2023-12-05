@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+
+}
+
+
+body{
+    background-color: #249d9f;
+}
+
+.container{
+    max-width: fit-content;
+    margin: 0 auto;
+}
+
+
+.box {
+    max-width: 7000px;
+    padding: 80px;
+    background-color: white;
+    margin-top: 50px;
+    box-shadow: 4px 3px 5px rgba(1,1,1,0,1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.form_design {
+    display: flex;
+    flex-direction: column;
+    font-weight: 400;
+}
+
+label{
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+input,
+select,
+textarea{
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+input:focus{
+    outline-color: rgb(38, 0, 255);
+}
+
+.button_container{
+    display: flex;
+
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+
+button{
+    border: transparent;
+    padding: 5px 10px;
+    color: rgb(86, 79, 79);
+    transition: 0.3s ease-in;
+}
+
+
+button:hover{
+    border: 2px solid ;
+    background-color: rgb(230, 82, 82);
+    cursor: pointer;
+}
+
