@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #249d9f;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.signupforma {
+    background-color: #fff;
+    height: 420px;
+    width: 500px;
+    padding: 30px;
+    border-radius: 13px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.signupforma #titulli {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-size: 55px;
+    font-weight: 600;
+}
+
+.signupforma label {
+    display: block;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.signupforma input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+.signupforma button {
+    background-color: #4caf50;
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    height: 42px;
+    width: 120px;
+    padding: 10px; 
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 18px;
+}
+
+.loginforma {
+    background-color: #fff;
+    height: 350px;
+    width: 500px;
+    padding: 30px;
+    border-radius: 13px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loginforma #titulli {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-size: 55px;
+    font-weight: 600;
+}
+
+.loginforma label {
+    display: block;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.loginforma input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+.loginforma button {
+    background-color: #284ccc;
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    height: 42px;
+    width: 120px;
+    padding: 8px; /* Adjust padding as needed */
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 18px;
+}
