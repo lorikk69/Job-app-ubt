@@ -18,13 +18,10 @@ function posto_pune() {
     });
 
     if (allFieldsFilled) {
-        // Retrieve existing jobs from local storage
         const storedJobs = JSON.parse(localStorage.getItem('jobs')) || [];
 
-        // Add the new job to the array
         storedJobs.push(job);
 
-        // Save the updated jobs array back to local storage
         localStorage.setItem('jobs', JSON.stringify(storedJobs));
 
         const event = new Event('jobPosted');
@@ -34,4 +31,5 @@ function posto_pune() {
     } else {
         alert("Ju lutem, plotësoni të gjitha fushat e detyrueshme!");
     }
+    
 }

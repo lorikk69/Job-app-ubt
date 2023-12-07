@@ -2,8 +2,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 
+}
 
+.f_css{
+    font-weight: 600;
+    font-size: 22px;
 }
 
 
@@ -56,14 +61,31 @@ input:focus{
 
     justify-content: flex-end;
     margin-top: 20px;
+
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin-top: 20px;
+    
 }
 
 
 button{
     border: transparent;
     padding: 5px 10px;
-    color: rgb(86, 79, 79);
-    transition: 0.3s ease-in;
+    background-color: #284ccc;
+    transition: 0.1s ease-in;
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    height: 42px;
+    width: 120px;
+    padding: 1px; 
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top:18px;
+
+    
 }
 
 
@@ -72,4 +94,19 @@ button:hover{
     background-color: rgb(230, 82, 82);
     cursor: pointer;
 }
+
+
+.cmimi{
+    border: 1px;  inset: #ccc;
+    
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; 
+    /* e hek shigjeten */
+}
+
+
 

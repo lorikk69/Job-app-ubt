@@ -5,49 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="forma.css"/>
+    <script src ="../Forma/forma.js"></script>
 
     <title>Job App</title>
     
 </head>
 <body>
 
-    
-
-
-
-
 
     <div class = "container">
         <div class ="box">
             <div class ="f_css">
             <h1>Apliko për punë</h1>
-            <div class="fcontainer">
+            <div class="fcontainer" id="forma">
                 <form>
                 <div class="form_design">  
-                 <label for="Emri">Emri:</label>
-                 <input id = "emri" name = "shkruaj emrin" placeholder="Shkruani emrin" required>
+                 <label for="emri">Emri:</label>
+                 <input id = "emri" name = "shkruaj emrin" placeholder="Shkruani emrin" >
                 </div>
                 
                 <div class="form_design">
                  <label for="mbiemri">Mbiemri:</label>
-                 <input id = "emri" name = "emri" placeholder="Shkruani mbiemrin" required>
+                 <input id = "mbiemri" name = "mbiemri" placeholder="Shkruani mbiemrin" >
                 </div>
 
                 
 
                 <div class="form_design">
                  <label for="email">Email:</label>
-                 <input id = "email" name = "email" placeholder="Shkruani email-in" required>
+                 <input type="email" id = "email" name = "email" placeholder="Shkruani email-in" >
                 </div>
 
                 <div class="form_design">
                  <label for="about_you">Diçka rreth teje</label>
-                 <textarea id="about_you" name="about_you" rows="4" cols="50" placeholder="Shkruaj diqka rreth teje" required></textarea>
+                 <textarea id="about_you" name="about_you" rows="4" cols="50" placeholder="Shkruaj diqka rreth teje" ></textarea>
                 </div>
 
                 <div class="form_design">
                  <label for="qyteti">Qyteti</label>
-                 <input id = "qyteti" name = "qyteti" placeholder="Shkruani qytetin" >
+                 <input id = "qyteti" name = "qyteti" placeholder="Shkruani qytetin"  >
                 </div>
 
 
@@ -57,10 +53,12 @@
                 </div>
 
 
-                <div class = button_container>
-                    <button type="submit">Apliko!</button>
-
+                <div class = button_container>  
+                    <button  onclick="redirect()" type="submit">Apliko!</button>
                 </div>
+
+
+                
                  
 
                  
@@ -71,5 +69,7 @@
             </div>
         </div>
     </div>
+    
 </body>
+
 </html>
