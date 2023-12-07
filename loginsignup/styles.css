@@ -1,0 +1,63 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #249d9f;
+   
+}
+
+.container {
+    display: flex;
+}
+.titulli{
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.form-container {
+    font-weight: 300;
+    background-color: #fff;
+    padding: 20px;
+    width: 500px;
+    height: 400px;
+    margin-bottom: 10px;
+    border-radius: 13px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+}
+
+input {
+    padding: 8px;
+    margin-bottom: 16px;
+}
+
+button {
+    font-size: 15px;
+    font-weight: 700;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 12px;
+}
+.ketu{
+    margin-top: 20px;
+}
+.ketu a{
+    font-weight: 500;
+}
+#signbtn{
+    background-color: rgb(44, 168, 31);
+}
