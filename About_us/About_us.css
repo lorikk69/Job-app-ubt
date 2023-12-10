@@ -1,0 +1,79 @@
+/* ... (Your existing styles) */
+
+/* Header Styles */
+.headerr {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-image: url(../photos/ph1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid black;
+    padding: 25px;
+    border-image: fill;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/* Mission Container Styles */
+.mission-container {
+    color: #fff;
+    background-image: url("../photos/img2.png");
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: overlay;
+    height: 200px;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.mission-container h2 {
+    color: #fff;
+}
+
+
+.vision-container {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f8f8f8; 
+}
+
+.vision-container h2 {
+    color: #333;
+}
+
+.values-container {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff; 
+}
+
+.values-container h2 {
+    color: #333;
+}
+
+.how-we-work-container {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f8f8f8;
+}
+
+.how-we-work-container h2 {
+    color: #333;
+}
+
+.commitment-container {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff; 
+}
+
+.commitment-container p {
+    color: #666;
+}
+
+.header-container{
+    margin-top: 100px;
+    text-align: center;
+}
