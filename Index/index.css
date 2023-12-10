@@ -86,3 +86,106 @@ body {
   text-decoration: none;
   color: white;
 }
+#entry {
+  color: #fff;
+  width: auto;
+  height: 400px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/Index/images/img5.png);
+  background-size: cover; 
+  margin-top: 80px;
+}
+#entryt{
+  margin-left: 15px;
+  font-size: 50px;
+  font-weight: 600;
+}
+#entryp{
+  font-size: 20px;
+  font-weight: 500;
+  margin-left: 15px;
+}
+
+#jobList {
+  list-style: none;
+  padding: 3%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#jobList li {
+  width: calc(33.33% - 20px);
+  box-sizing: border-box;
+  padding: 20px;
+  border: 3px solid #249d9f;
+  border-radius: 15px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#jobList li h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+#jobList li p {
+  font-size: 16px;
+  color: #555;
+}
+
+#jobList li button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #249d9f;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#jobList li button:hover {
+  background-color: #1b7f81;
+}
+
+#jobList li:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease-in-out;
+}
+.Shpalljet_container {
+  background: linear-gradient(45deg, #249d9f, #207080); 
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  padding-top: 100px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  transform: rotate(-1deg); 
+}
+
+.Shpalljet_container h2 {
+  
+  font-size: 28px; /* Larger font size for emphasis */
+  font-weight: bold;
+  margin: 0;
+  letter-spacing: 1px; /* Add some letter spacing for better readability */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Text shadow for emphasis */
+  margin-bottom: 25px;
+}
+#buttonish {
+  display: block;
+  margin: 20px auto 0;
+  padding: 8px 15px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  background-color: #475B5A;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  width: fit-content; /* Set the width to fit the content */
+  margin-bottom: 20px;
+}

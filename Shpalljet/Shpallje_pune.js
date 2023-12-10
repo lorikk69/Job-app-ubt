@@ -14,7 +14,7 @@ function displayJobs() {
             <strong>Pozita:</strong> ${job.pozita}<br>
             <strong>Përshkrimi i punës:</strong> ${job.about_us}<br>
             <strong>Paga:</strong> ${job.paga} €<br>
-            <button class="buttoni_forma">Posto punë</button>
+            <button class="buttoni_forma">Apliko</button>
 
             <hr>
         `;

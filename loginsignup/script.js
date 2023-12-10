@@ -56,7 +56,7 @@ function login() {
   document.getElementById("loginForm").reset();
 
   alert("U kyçet me sukses miresevini.");
-  window.location.href = "../posto/posto_pune.html";
+  window.location.href = "../Forma/posto_pune.html";
 }
 
 function showError() {

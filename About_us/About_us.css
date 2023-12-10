@@ -1,6 +1,4 @@
-/* ... (Your existing styles) */
 
-/* Header Styles */
 .headerr {
     justify-content: center;
     display: flex;
@@ -17,7 +15,7 @@
     box-sizing: border-box;
 }
 
-/* Mission Container Styles */
+
 .mission-container {
     color: #fff;
     background-image: url("../photos/img2.png");
