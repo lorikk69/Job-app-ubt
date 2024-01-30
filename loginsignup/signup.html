@@ -10,20 +10,18 @@
 
 <div class="container">
     <div class="form-container">
-        <form id="signupForm">
+        <form id="signupForm" method="post" action="signup.php">
             <p class="titulli">SIGNUP</p>
             <label for="signemail">Email:</label>
-            <input type="email" id="signemail" required>
+            <input type="email" name="email" id="signemail" required>
             <label for="signpassword">Fjalekalimi:</label>
-            <input type="password" id="signpassword" required>
-            <button type="button" id="signbtn" onclick="signup()">Sign Up</button>
+            <input type="password" name="password" id="signpassword" required>
+            <button type="submit" id="signbtn">Sign Up</button>
        
-       <p class="ketu">Keni tashme llogari, kyçu <a href="login.html">ketu</a></p>
+            <p class="ketu">Keni tashme llogari, kyçu <a href="login.html">ketu</a></p>
         </form>
-        
     </div>
 </div>
 
-<script src="script.js"></script>
 </body>
 </html>

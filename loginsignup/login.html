@@ -10,19 +10,17 @@
 
 <div class="container">
     <div class="form-container">
-        <form id="loginForm">
+        <form id="loginForm" method="post" action="login.php">
             <p class="titulli">LOGIN</p>
             <label for="loginemail">Email:</label>
-            <input type="text" id="loginemail" required>
+            <input type="text" name="loginemail" id="loginemail" required>
             <label for="loginpassword">Fjalekalimi:</label>
-            <input type="password" id="loginpassword" required>
-            <button type="button" onclick="login()">Login</button>
+            <input type="password" name="loginpassword" id="loginpassword" required>
+            <button type="submit">Login</button>
             <p class="ketu">Nuk keni llogari regjistrohu <a href="signup.html">ketu</a></p>
-
         </form>
     </div>
 </div>
 
-<script src="script.js"></script>
 </body>
 </html>
