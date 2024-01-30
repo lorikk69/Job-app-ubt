@@ -1,0 +1,66 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #121212; /* Dark background color */
+    color: #ffffffa4; /* Text color */
+}
+h2{
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.containeradm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-containeradm {
+    font-weight: 300;
+    background-color: #1e1e1e; /* Darker background color */
+    padding: 20px;
+    width: 450px; /* Adjusted width */
+    border-radius: 13px;
+    margin-top: 20px; /* Adjusted margin */
+    text-align: center; /* Center text inside the form container */
+}
+
+.form-containeradm h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px; /* Adjusted margin */
+}
+
+.form-groupadm {
+    margin-bottom: 16px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input {
+    width: calc(100% - 16px); /* Adjusted input width */
+    padding: 8px;
+    background-color: #2b2b2b; /* Darker input background color */
+    color: #fff; /* Text color */
+    border: 1px solid #555; /* Dark border color */
+    text-align: center; /* Center text inside input */
+}
+
+button {
+    font-size: 15px;
+    font-weight: 700;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 12px;
+    width: 70px; /* Ensure button width spans the container */
+}
