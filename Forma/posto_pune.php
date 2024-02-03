@@ -1,5 +1,9 @@
 <?php
-
+session_start();
+if (!isset($_SESSION['logged_in'])) {
+    header("Location: ../loginsignup/login.html");
+    exit();
+}
 include('../db/Database.php');
 
 if (isset($_POST['posto_pune'])) {
@@ -10,19 +14,19 @@ if (isset($_POST['posto_pune'])) {
     $about_us = $_POST['about_us'];
     $paga = $_POST['paga'];
 
-    try {
-        // Use prepared statements to prevent SQL injection
-        $stmt = $conn->prepare("INSERT INTO employee (`Emri Kompanise`, `Qyteti`, `Orari`, `Pozita`, `Pershkrimi`, `salary`) VALUES (?, ?, ?, ?, ?, ?)");
+    $user_id = $_SESSION['user_id'];
 
-        // Bind parameters
+    try {
+        $stmt = $conn->prepare("INSERT INTO employee (`Emri Kompanise`, `Qyteti`, `Orari`, `Pozita`, `Pershkrimi`, `salary`, `user_id`) VALUES (?, ?, ?, ?, ?, ?, ?)");
+
         $stmt->bindParam(1, $kompania);
         $stmt->bindParam(2, $qyteti);
         $stmt->bindParam(3, $orari);
         $stmt->bindParam(4, $pozita);
         $stmt->bindParam(5, $about_us);
         $stmt->bindParam(6, $paga);
+        $stmt->bindParam(7, $user_id);
 
-        // Execute the statement
         $stmt->execute();
 
         // Redirect to Apliko.php after posting the job
@@ -34,6 +38,7 @@ if (isset($_POST['posto_pune'])) {
 }
 ?>
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

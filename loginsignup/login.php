@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if(isset($_POST['loginemail']) && isset($_POST['loginpassword'])) {
@@ -20,17 +21,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $result = $conn->query($sql_check_credentials);
 
         if ($result->num_rows == 1) {
+            $_SESSION['logged_in'] = true;
+
+            $row = $result->fetch_assoc();
+            $_SESSION['user_id'] = $row['id'];
+
             echo "<script>alert('U kyçet me sukses.');</script>";
-            echo '<script>window.location.href = "../Index/index.html";</script>';
+            echo '<script>window.location.href = "../Index/index.php";</script>';
         } else {
             echo "<script>alert('Fjalekalimi ose email jane gabim, provoni perseri.');</script>";
-            include("login.html"); 
         }
 
         $conn->close();
     } else {
         echo "<script>alert('Format duhen te plotesohen!');</script>";
-        include("login.html"); 
     }
 }
+
+include("login.html");
 ?>

@@ -1,23 +1,18 @@
 <?php
-// Apliko.php
+session_start();
 
-// Include the Database class
 include('../db/Database.php');
 
 class JobListing {
     private $conn;
 
-    // Constructor to initialize the database connection
     public function __construct($conn) {
         $this->conn = $conn;
     }
 
-    // Display the list of jobs
     public function displayJobs() {
-        // Get job data from the database
         $storedJobs = $this->getJobData();
 
-        // Display jobs in an unordered list
         echo '<ul id="jobList">';
 
         foreach ($storedJobs as $job) {
@@ -29,18 +24,17 @@ class JobListing {
             echo '<strong>Përshkrimi i punës:</strong> ' . $job['Pershkrimi'] . '<br>';
             echo '<strong>Paga:</strong> ' . $job['salary'] . ' €<br>';
 
-            // Button to apply for job
-            echo '<button class="buttoni_forma" onclick="redirectForma(' . $job['id'] . ')">Apliko</button>';
-            
-            // Button to edit job (you can replace '#' with the actual edit page URL)
-            echo '<a href="../api/editJob.php?job_id=' . $job['id'] . '"><button class="buttoni_forma">Edit</button></a>';
-            
-            // Button to delete job
-            echo '<form method="post" action="../api/deleteJob.php">';
-            echo '<input type="hidden" name="job_id" value="' . $job['id'] . '">';
-            echo '<button type="submit" class="buttoni_forma">Delete</button>';
-            echo '</form>';
-            
+            if (isset($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in']) {
+                // Display delete button only if admin is logged in
+                echo '<form method="post" action="../api/deleteJob.php">';
+                echo '<input type="hidden" name="job_id" value="' . $job['id'] . '">';
+                echo '<button type="submit" class="buttoni_forma">Delete</button>';
+                echo '</form>';
+            } else {
+                // Display "Apliko" button for regular users
+                echo '<a href="../Forma/forma.php?job_id=' . $job['id'] . '"><button class="buttoni_forma">Apliko</button></a>';
+            }
+
             echo '<hr>';
             echo '</li>';
         }
@@ -50,12 +44,7 @@ class JobListing {
 
     // Get job data from the database
     public function getJobData() {
-        if ($this->conn === null) {
-            return array();
-        }
-
         try {
-            // Fetch job data
             $stmt = $this->conn->prepare("SELECT * FROM employee");
 
             if (!$stmt) {
@@ -105,26 +94,19 @@ try {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shpalljet Aktuale të Punës</title>
-    <link rel="stylesheet" type="text/css" href="index.css"/>
+    <link rel="stylesheet" type="text/css" href="shpalljet.css"/>
     <link href='https://fonts.googleapis.com/css?family=Kanit' rel='stylesheet'>
-    <link rel="stylesheet" type="text/css" href="ftr.css"/>
-    <script src="../Shpalljet/crud.js"></script>
+    <script>
+        function redirectForma(jobId) {
+            // Redirect logic for "Apliko" button
+            window.location.href = "apliko.php?job_id=" + jobId;
+        }
+    </script>
 </head>
 <body>
-    <nav>
-        <div class="content">
-            <div class="logo">
-                <a href="/Index/index.html">TalentCraft</a>
-            </div>
-            <ul class="items">
-                <li><a href="../Shpalljet/Shpallje.html">Kërko punë</a></li>
-                <li><a href="../loginsignup/login.html">Shpall Punë</a></li>
-                <li><a href="../About_us/About_us.html">About us</a></li>
-                <li><a href="../loginsignup/login.html">Log In</a></li>
-                <li><a href="../loginsignup/signup.html">Sign-Up</a></li>
-            </ul>
-        </div>
-    </nav>
+   <?php 
+    include '../headerfooter/header.php';
+   ?>
 
     <div class ="Shpalljet_container">
         <h2>Shpalljet Aktuale të Punës</h2>
@@ -134,8 +116,8 @@ try {
         <?php $jobListing->displayJobs(); ?>
     </div>
 
-    <footer class="footer">
-        <!-- Your footer content here -->
-    </footer>
+    <?php 
+    include '../headerfooter/footer.php';
+    ?>
 </body>
 </html>

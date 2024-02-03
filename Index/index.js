@@ -3,8 +3,8 @@ function displayJobs() {
     jobList.innerHTML = '';
 
     const storedJobs = JSON.parse(localStorage.getItem('jobs')) || [];
-    const maxFormsToShow = 3;  // Set the maximum number of forms to display
-    let formsDisplayed = 0;  // Counter for forms displayed
+    const maxFormsToShow = 3;  
+    let formsDisplayed = 0;  
 
     storedJobs.forEach(job => {
         if (formsDisplayed < maxFormsToShow) {
