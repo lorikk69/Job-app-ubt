@@ -1,4 +1,4 @@
-<!-- <?php
+ <!-- <?php
 $servername = "localhost"; 
 $db = "tc_db"; 
 $username = "root";
@@ -10,4 +10,4 @@ try {
 } catch (PDOException $e) {
     echo " Lidhja dështoi: " . $e->getMessage();
 }
-?> -->
+?>  -->

@@ -68,6 +68,8 @@ body {
   align-items: center;
   justify-content: center;
   height: 36px;
+  position: relative;
+  top: 20px;
   max-width: max-content;
   background-color: rgba(0, 0, 0, 0.166);
   border-radius: 100px;
@@ -76,6 +78,7 @@ body {
   margin: 0.6em 0;
   font-size: 1rem;
   padding: 0 1.3em;
+  
 }
 
 .footer ul {
@@ -158,14 +161,15 @@ body {
   }
   
   .footer__nav {
-      flex: 2 0px;
+      flex: 1 0px;
+      position: relative;
+      
+      
+      
   }
-}
 
-.icon-img {
-  width: 20px; 
-  height: 20px; 
-  margin-right: 5px; 
-  margin-bottom: 1px;
-  vertical-align: middle;
+  address{
+      margin:20px;
+  }
+
 }

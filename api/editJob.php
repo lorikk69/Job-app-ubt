@@ -1,5 +1,5 @@
 <?php
-// Initialize variables
+
 $kompania = '';
 $qyteti = '';
 $orari = '';
@@ -7,10 +7,8 @@ $pozita = '';
 $about_us = '';
 $paga = '';
 
-// Check if the form is submitted
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Form is submitted
-    // Handle form submission as usual
     $kompania = $_POST['kompania'];
     $qyteti = $_POST['Qyteti'];
     $orari = $_POST['orari'];
@@ -18,11 +16,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $about_us = $_POST['about_us'];
     $paga = $_POST['paga'];
 
-    // Include necessary files
     include('../db/Database.php');
 
     try {
-        // Create a new PDO connection
         $servername = "localhost";
         $db = "tc_db";
         $username = "root";
@@ -31,28 +27,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $conn = new PDO("mysql:host=$servername;dbname=$db", $username, $password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        // Prepare and execute the SQL statement to update job details
         $stmt = $conn->prepare("UPDATE employee SET `Emri Kompanise` = ?, `Qyteti` = ?, `Orari` = ?, `Pozita` = ?, `Pershkrimi` = ?, `salary` = ? WHERE id = ?");
         $stmt->execute([$kompania, $qyteti, $orari, $pozita, $about_us, $paga, $_GET['job_id']]);
 
-        // Redirect to Apliko.php after updating the job
         header('Location: ../Shpalljet/Apliko.php');
         exit;
     } catch (PDOException $e) {
-        // Display error message
         echo "Error: " . $e->getMessage();
     }
 } else {
-    // Form is loaded initially
-    // Check if job_id is provided in the URL
     if (isset($_GET['job_id'])) {
         $job_id = $_GET['job_id'];
 
-        // Include necessary files
         include('../db/Database.php');
 
         try {
-            // Create a new PDO connection
+          
             $servername = "localhost";
             $db = "tc_db";
             $username = "root";
@@ -61,14 +51,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $conn = new PDO("mysql:host=$servername;dbname=$db", $username, $password);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            // Prepare and execute the SQL statement to fetch job details
             $stmt = $conn->prepare("SELECT * FROM employee WHERE id = ?");
             $stmt->execute([$job_id]);
             $job = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            // Check if job exists
             if ($job) {
-                // Extract job details
                 $kompania = $job['Emri Kompanise'];
                 $qyteti = $job['Qyteti'];
                 $orari = $job['Orari'];
@@ -79,11 +66,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 echo "Job not found.";
             }
         } catch (PDOException $e) {
-            // Display error message
             echo "Error: " . $e->getMessage();
         }
     } else {
-        // Redirect if job_id is not provided
         header("Location: ../Shpalljet/Apliko.php");
         exit();
     }
