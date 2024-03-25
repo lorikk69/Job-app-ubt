@@ -12,13 +12,12 @@ if (!isset($_SESSION['admin_logged_in'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="dashboard.css"> <!-- Include external CSS file -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Include Font Awesome -->
+    <link rel="stylesheet" href="dashboard.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
 </head>
 
 <body>
     <?php
-    // Include users.php to use the $usersList variable
     include 'users.php';
 
     if ($_SESSION['admin_logged_in'] == true) { 
@@ -33,7 +32,6 @@ if (!isset($_SESSION['admin_logged_in'])) {
                         <i class="fas fa-briefcase"></i> Job Listings
                     </a>
                 </div>
-                <!-- You can add additional sidebar content here -->
             </div>
 
             <div class="main-content">
@@ -69,26 +67,20 @@ if (!isset($_SESSION['admin_logged_in'])) {
             </div>
         </div>
 
-        <!-- Hidden input to store user ID for deletion -->
         <input type="hidden" id="deleteUserId">
 
         <script>
             function showDeletePopup(userId) {
-                // Show the delete popup
                 document.getElementById('deletePopup').style.display = 'block';
-                // Pass the user ID to a hidden input field if needed
                 document.getElementById('deleteUserId').value = userId;
             }
 
             function cancelDelete() {
-                // Hide the delete popup
                 document.getElementById('deletePopup').style.display = 'none';
             }
 
             function confirmDelete() {
-                // Retrieve user ID from a hidden input field or any other element
                 var userId = document.getElementById('deleteUserId').value;
-                // Redirect to delete_user.php with user ID as a parameter
                 window.location.href = 'delete_user.php?id=' + userId;
             }
         </script>

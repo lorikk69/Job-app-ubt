@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;400&family=Montserrat:wght@300&family=Open+Sans:wght@700&family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #2a3f54;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sidebar-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.sidebar-icons a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.sidebar-icons a:hover {
+    color: #ccc;
+}
+
+.main-content {
+    margin-right: 250px; 
+    padding: 20px;
+}
+
+.user-list {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.user-list table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.user-list th,
+.user-list td {
+    padding: 12px 20px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.user-list th {
+    background-color: #2a3f54;
+    color: #fff;
+}
+
+.user-list tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+
+.action-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.action-icons i {
+    cursor: pointer;
+    font-size: 16px;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.action-icons i:hover {
+    color: #333;
+}
+
+
+.delete-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+.delete-popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.delete-popup-content p {
+    margin-bottom: 20px;
+}
+
+
+.delete-popup-content .delete-popup-buttons {
+    text-align: right;
+}
+
+.delete-popup-content .delete-popup-buttons button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    background-color: #007bff; 
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.delete-popup-content .delete-popup-buttons button:first-child {
+    margin-left: 0;
+    margin-right: 200px; 
+}
+
+.delete-popup-content .delete-popup-buttons button:hover {
+    background-color: #dc3545; 
+}
+
+
+.action-icons {
+    text-align: right;
+}
+
+.action-icons .fas.fa-trash-alt {
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.action-icons .fas.fa-trash-alt:hover {
+    color: red;
+}
