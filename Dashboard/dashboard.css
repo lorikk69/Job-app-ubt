@@ -45,44 +45,57 @@
 }
 
 .main-content {
-    margin-right: 250px; 
+    margin-right: 250px;
     padding: 20px;
 }
 
-.user-list {
+.user-list,
+.job-list {
     width: 100%;
     margin-top: 20px;
-}
-
-.user-list table {
-    width: 100%;
-    border-collapse: collapse;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+.user-list table,
+.job-list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
 .user-list th,
-.user-list td {
+.user-list td,
+.job-list th,
+.job-list td {
     padding: 12px 20px;
     text-align: left;
     border-bottom: 1px solid #ddd;
 }
 
-.user-list th {
+.user-list th,
+.job-list th {
     background-color: #2a3f54;
     color: #fff;
 }
 
-.user-list tbody tr:nth-child(even) {
+.user-list tbody tr:nth-child(even),
+.job-list tbody tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
-
 .action-icons {
+    
     display: flex;
     gap: 10px;
+    text-align: right;
 }
 
 .action-icons i {
+    margin-left: 25px;
+    margin-top: 9.5px;
     cursor: pointer;
     font-size: 16px;
     color: #666;
@@ -93,6 +106,94 @@
     color: #333;
 }
 
+.edit-popup {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 105%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4); 
+}
+
+.edit-popup-content {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 30px;
+    width: 80%;
+    max-width: 600px;
+    margin: 50px auto; 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.edit-popup-content h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.edit-popup-content label {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.edit-popup-content input[type="text"],
+.edit-popup-content textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.edit-popup-content textarea {
+    resize: vertical;
+}
+
+.edit-popup-content button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.edit-popup-content button:hover {
+    background-color: #0056b3;
+}
+
+.edit-popup-content button:last-child {
+    margin-left: 10px;
+    background-color: #dc3545;
+}
+
+.edit-popup-content button:last-child:hover {
+    background-color: #bd2130;
+}
+
+.edit-popup-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #aaa;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.edit-popup-close:hover,
+.edit-popup-close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
 
 .delete-popup {
     display: none;
@@ -120,7 +221,6 @@
     margin-bottom: 20px;
 }
 
-
 .delete-popup-content .delete-popup-buttons {
     text-align: right;
 }
@@ -131,23 +231,18 @@
     border: none;
     border-radius: 3px;
     cursor: pointer;
-    background-color: #007bff; 
+    background-color: #007bff;
     color: white;
     transition: background-color 0.3s;
 }
 
 .delete-popup-content .delete-popup-buttons button:first-child {
     margin-left: 0;
-    margin-right: 200px; 
+    margin-right: 200px;
 }
 
 .delete-popup-content .delete-popup-buttons button:hover {
-    background-color: #dc3545; 
-}
-
-
-.action-icons {
-    text-align: right;
+    background-color: #dc3545;
 }
 
 .action-icons .fas.fa-trash-alt {
@@ -158,4 +253,60 @@
 
 .action-icons .fas.fa-trash-alt:hover {
     color: red;
+}
+
+
+#cancel-btn {
+    position: absolute;
+    left: 500px; 
+    bottom: -20px; 
+    height: 35px;
+    width:150px;
+    z-index:2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#update-btn {
+    position: absolute;
+    right: 500px; 
+    bottom: -20px; 
+    height: 35px;
+    width:150px;
+    z-index:2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.action-icons i.fa-trash-alt {
+    margin-left: 25px;
+    margin-top: 9.5px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.action-icons i.fa-trash-alt:hover {
+    color: red;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 15px;
+    color: black;
+}
+
+.action-buttons a i {
+    cursor: pointer;
+    font-size: 16px;
+    color: black;
+    transition: color 0.3s ease
+}
+
+.back-home {
+    position: absolute;
+    bottom: 20px;
 }

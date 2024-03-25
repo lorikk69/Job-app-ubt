@@ -1,3 +1,10 @@
+<?php 
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +17,6 @@
     <link href='https://fonts.googleapis.com/css?family=Kanit' rel='stylesheet'>
     <link rel="stylesheet" type="text/css" href="../headerfooter/footeri.css"/>
     <link rel="stylesheet" type="text/css" href="../headerfooter/hdr.css" />
-    
 </head>
 
 <body>
@@ -22,12 +28,8 @@
             <ul class="items">
                 <li><a href="/tcweb/Shpalljet/Apliko.php">Kërko punë</a></li>
                 <?php
-                if (session_status() == PHP_SESSION_NONE) {
-                    session_start();
-                }
                 if (isset($_SESSION['logged_in'])) {
                     echo '<li><a href="/tcweb/Forma/posto_pune.php">Shpall Punë</a></li>';
-                
                     echo '<li class="dropdown">
                             <a href="#" class="dropbtn">Account</a>
                             <div class="dropdown-content">
@@ -35,15 +37,23 @@
                                 <a href="/tcweb/loginsignup/logout.php" onclick="return confirmLogout();">Sign Out</a>
                             </div>
                           </li>';
+                } elseif (isset($_SESSION['admin_logged_in'])) {
+
+                    echo '<li class="dropdown">
+                            <a href="#" class="dropbtn">Account</a>
+                            <div class="dropdown-content">
+                                <a href="/tcweb/loginsignup/logout.php" onclick="return confirmLogout();">Sign Out</a>
+                            </div>
+                          </li>';
                 } else {
-                    echo '<li><a href="/tcweb/loginsignup/login.html">Shpall Punë</a></li>';
-                    echo '
-                    <li><a href="/tcweb/loginsignup/login.html">Log In</a></li>
-                    <li><a href="/tcweb/loginsignup/signup.html">Sign-Up</a></li>
-                    ';
+
+                    echo '<li><a href="/tcweb/Forma/posto_pune.php">Shpall Punë</a></li>';
+                    echo '<li><a href="/tcweb/loginsignup/login.html">Log In</a></li>';
+                    echo '<li><a href="/tcweb/loginsignup/signup.html">Sign-Up</a></li>';
                 }
                 ?>
                 <li><a href="/tcweb/About_us/About_us.php">About us</a></li>
+                <li><a href="/tcweb/Contact/Contact.php">Contact us</a></li>
             </ul>
         </div>
     </nav>

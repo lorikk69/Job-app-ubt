@@ -1,5 +1,5 @@
 <?php
-
+// Include User and UsersList classes
 class User {
     private $id;
     private $email;
@@ -51,8 +51,34 @@ class UsersList {
     public function displayUsers() {
         foreach ($this->users as $user) {
             $user->displayUser();
-        }
+        }   
     }
 }
 
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "tc_db"; 
+
+$conn = new mysqli($servername, $username, $password, $database);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT id, email, password, created_at FROM users";
+$result = $conn->query($sql);
+
+$usersList = new UsersList();
+
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $user = new User($row['id'], $row['email'], $row['password'], $row['created_at']);
+        $usersList->addUser($user);
+    }
+} else {
+    echo "No users found";
+}
+
+$conn->close();
 ?>
