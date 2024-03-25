@@ -52,6 +52,7 @@ if (session_status() === PHP_SESSION_NONE) {
                     echo '<li><a href="/tcweb/loginsignup/signup.html">Sign-Up</a></li>';
                 }
                 ?>
+                <li><a href="/tcweb/exp/exp.php">Partneriteti</a></li>
                 <li><a href="/tcweb/About_us/About_us.php">About us</a></li>
                 <li><a href="/tcweb/Contact/Contact.php">Contact us</a></li>
             </ul>
